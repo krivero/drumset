@@ -12,7 +12,7 @@
 <body>
     <div id="directions">
         <h1>Halloween Sound Effect Bar</h1>
-        <h2>Type the corresponding keys on your keyboard to generate the sound effect of your choice.</h2>
+        <h2>Type the corresponding keys on your keyboard to generate the sound effect of your choice</h2>
         <h4>Play at your own risk</h4>
     </div>
     <div class="keys">
@@ -22,7 +22,7 @@
         </div>
         <div data-key="83" class="key">
             <kbd>S</kbd>
-            <span class="sound">Explosion</span>
+            <span class="sound">Bomb</span>
         </div>
         <div data-key="68" class="key">
             <kbd>D</kbd>
@@ -52,17 +52,17 @@
             <kbd>L</kbd>
             <span class="sound">Thunder</span>
         </div>
-        <div data-key="76" class="key">
+        <div data-key="67" class="key">
             <kbd>C</kbd>
             <span class="sound">Scream</span>
         </div>
-        <div data-key="76" class="key">
+        <div data-key="86" class="key">
             <kbd>V</kbd>
             <span class="sound">Gasp</span>
         </div>
-        <div data-key="76" class="key">
+        <div data-key="66" class="key">
             <kbd>B</kbd>
-            <span class="sound">Champagne</span>
+            <span class="sound">Bubbly</span>
         </div>
     </div>
 
@@ -85,8 +85,11 @@
     <script>
         window.addEventListener('keydown', function (e) {
             const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
             if (!audio) return; //stops function from executing
+            audio.currentTime = 0; //rewind sound file back to start
             audio.play();
+            key.classList.add('playing');
         });
 
     </script>
