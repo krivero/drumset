@@ -79,18 +79,26 @@
     <audio data-key="86" src="sounds/gasp.wav"></audio>
     <audio data-key="66" src="sounds/champagne.wav"></audio>
 
-
-
-
     <script>
-        window.addEventListener('keydown', function (e) {
+
+        function playSound(e) {
             const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
             const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
             if (!audio) return; //stops function from executing
             audio.currentTime = 0; //rewind sound file back to start
             audio.play();
             key.classList.add('playing');
-        });
+        };
+
+        function removeTransition(e) {
+            if (e.propertyName !== 'transform') return; //skip if css prop is not transform
+            this.classList.remove('playing');
+        };
+
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+        window.addEventListener('keydown', playSound);
 
     </script>
 
