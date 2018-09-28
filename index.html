@@ -3,67 +3,90 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Drum Kit</title>
+    <title>Halloween Sound Effect Bar</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
 </head>
 
 <body>
     <div id="directions">
-        <h2>Type the keys on your keyboard to start playing.</h2>
+        <h1>Halloween Sound Effect Bar</h1>
+        <h2>Type the corresponding keys on your keyboard to generate the sound effect of your choice.</h2>
+        <h4>Play at your own risk</h4>
     </div>
     <div class="keys">
         <div data-key="65" class="key">
             <kbd>A</kbd>
-            <span class="sound">clap</span>
+            <span class="sound">News</span>
         </div>
         <div data-key="83" class="key">
             <kbd>S</kbd>
-            <span class="sound">hihat</span>
+            <span class="sound">Explosion</span>
         </div>
         <div data-key="68" class="key">
             <kbd>D</kbd>
-            <span class="sound">kick</span>
+            <span class="sound">Doorbell</span>
         </div>
         <div data-key="70" class="key">
             <kbd>F</kbd>
-            <span class="sound">openhat</span>
+            <span class="sound">Laser</span>
         </div>
         <div data-key="71" class="key">
             <kbd>G</kbd>
-            <span class="sound">boom</span>
+            <span class="sound">Pant</span>
         </div>
         <div data-key="72" class="key">
             <kbd>H</kbd>
-            <span class="sound">ride</span>
+            <span class="sound">Neon</span>
         </div>
         <div data-key="74" class="key">
             <kbd>J</kbd>
-            <span class="sound">snare</span>
+            <span class="sound">Creak</span>
         </div>
         <div data-key="75" class="key">
             <kbd>K</kbd>
-            <span class="sound">tom</span>
+            <span class="sound">Phone</span>
         </div>
         <div data-key="76" class="key">
             <kbd>L</kbd>
-            <span class="sound">tink</span>
+            <span class="sound">Thunder</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>C</kbd>
+            <span class="sound">Scream</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>V</kbd>
+            <span class="sound">Gasp</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>B</kbd>
+            <span class="sound">Champagne</span>
         </div>
     </div>
 
-    <audio data-key="65" src="sounds/clap.wav"></audio>
-    <audio data-key="83" src="sounds/hihat.wav"></audio>
-    <audio data-key="68" src="sounds/kick.wav"></audio>
-    <audio data-key="70" src="sounds/openhat.wav"></audio>
-    <audio data-key="71" src="sounds/boom.wav"></audio>
-    <audio data-key="72" src="sounds/ride.wav"></audio>
-    <audio data-key="74" src="sounds/snare.wav"></audio>
-    <audio data-key="75" src="sounds/tom.wav"></audio>
-    <audio data-key="76" src="sounds/tink.wav"></audio>
+    <audio data-key="65" src="sounds/news.wav"></audio>
+    <audio data-key="83" src="sounds/explosion.wav"></audio>
+    <audio data-key="68" src="sounds/doorbell.wav"></audio>
+    <audio data-key="70" src="sounds/laser.wav"></audio>
+    <audio data-key="71" src="sounds/pant.wav"></audio>
+    <audio data-key="72" src="sounds/neon_light.wav"></audio>
+    <audio data-key="74" src="sounds/creak.wav"></audio>
+    <audio data-key="75" src="sounds/phone.wav"></audio>
+    <audio data-key="76" src="sounds/thunder.wav"></audio>
+    <audio data-key="67" src="sounds/scream.wav"></audio>
+    <audio data-key="86" src="sounds/gasp.wav"></audio>
+    <audio data-key="66" src="sounds/champagne.wav"></audio>
+
+
+
 
     <script>
         window.addEventListener('keydown', function (e) {
             const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
             if (!audio) return; //stops function from executing
+            audio.play();
         });
 
     </script>
