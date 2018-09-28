@@ -12,12 +12,21 @@ html {
   font-family: sans-serif;
 }
 
+#directions {
+  color: white;
+  background: black;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 25rem;
+}
+
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 50vh;
   align-items: center;
   justify-content: center;
+  padding: 0rem;
 }
 
 .key {
