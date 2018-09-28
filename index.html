@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JS Drum Kit</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-
+    <div id="directions">
+        <h2>Type the keys on your keyboard to start playing.</h2>
+    </div>
     <div class="keys">
         <div data-key="65" class="key">
             <kbd>A</kbd>
@@ -60,8 +61,10 @@
     <audio data-key="76" src="sounds/tink.wav"></audio>
 
     <script>
-
-
+        window.addEventListener('keydown', function (e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+            if (!audio) return; //stops function from executing
+        });
 
     </script>
 
